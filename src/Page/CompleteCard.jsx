@@ -11,14 +11,14 @@ const CompleteCard = ({dfrsh}) => {
     const { data: completetasks = [], refetch } = useQuery({
         queryKey: ['completetasks'],
         queryFn: async () => {
-            const res = await axios.get(`http://localhost:3000/Complete`);
+            const res = await axios.get(`https://task-mangement-server-site.vercel.app/Complete`);
             return res.data;
         },
     });
     const CompltTask = completetasks.filter(item => item.email === `${user.email}`)
     console.log(CompltTask)
     const handleDelete = (id) => {
-        axios.delete(`http://localhost:3000/Complete/${id}`).then((res) => {
+        axios.delete(`https://task-mangement-server-site.vercel.app/Complete/${id}`).then((res) => {
           if (res.data.deletedCount > 0) {
             Swal.fire({
               position: 'top-end',

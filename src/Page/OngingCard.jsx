@@ -11,14 +11,14 @@ const OngingCard = ({drefresh}) => {
     const { data: ontasks = [], refetch } = useQuery({
         queryKey: ['ontasks'],
         queryFn: async () => {
-            const res = await axios.get(`http://localhost:3000/Ongoing`);
+            const res = await axios.get(`https://task-mangement-server-site.vercel.app/Ongoing`);
             return res.data;
         },
     });
     const ongoTask = ontasks.filter(item => item.email === `${user.email}`)
     console.log(ongoTask)
     const handleDelete = (id) => {
-        axios.delete(`http://localhost:3000/Ongoing/${id}`).then((res) => {
+        axios.delete(`https://task-mangement-server-site.vercel.app/Ongoing/${id}`).then((res) => {
           if (res.data.deletedCount > 0) {
             Swal.fire({
               position: 'top-end',

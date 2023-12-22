@@ -43,7 +43,7 @@ const Signup = () => {
                             // user post to the database
 
 
-                            axios.post('http://localhost:3000/users', userinfo)
+                            axios.post('https://task-mangement-server-site.vercel.app/users', userinfo)
                                 .then(res => {
                                     console.log(res.data)
                                     if (res.data.insertedId) {

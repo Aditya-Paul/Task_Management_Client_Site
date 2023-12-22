@@ -30,11 +30,11 @@ const TodoCard = ({ items, dlt,updlt }) => {
             email: items.email,
         }
         console.log(taskinfo)
-        axios.post('http://localhost:3000/Ongoing', taskinfo)
+        axios.post('https://task-mangement-server-site.vercel.app/Ongoing', taskinfo)
             .then(res => {
                 console.log(res.data)
                 if (res.data.insertedId) {
-                    axios.delete(`http://localhost:3000/tasks/${id}`).then((res) => {
+                    axios.delete(`https://task-mangement-server-site.vercel.app/tasks/${id}`).then((res) => {
                         if (res.data.deletedCount > 0) {
                           Swal.fire({
                             position: 'top-end',
@@ -58,11 +58,11 @@ const TodoCard = ({ items, dlt,updlt }) => {
             email: items.email,
         }
         console.log(taskinfo)
-        axios.post('http://localhost:3000/complete', taskinfo)
+        axios.post('https://task-mangement-server-site.vercel.app/complete', taskinfo)
             .then(res => {
                 console.log(res.data)
                 if (res.data.insertedId) {
-                    axios.delete(`http://localhost:3000/tasks/${id}`).then((res) => {
+                    axios.delete(`https://task-mangement-server-site.vercel.app/tasks/${id}`).then((res) => {
                         if (res.data.deletedCount > 0) {
                           Swal.fire({
                             position: 'top-end',

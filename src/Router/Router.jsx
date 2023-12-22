@@ -25,7 +25,7 @@ const Router = createBrowserRouter([
             {
                 path: "/users",
                 element:<Users></Users>,
-                loader: () => fetch('http://localhost:3000/users')
+                loader: () => fetch('https://task-mangement-server-site.vercel.app/users')
             },
             {
                 path: "/login",
@@ -53,7 +53,7 @@ const Router = createBrowserRouter([
             {
                 path: "todo_list",
                 element: <Todo_list></Todo_list>,
-                loader: () => fetch('http://localhost:3000/tasks')
+                loader: () => fetch('https://task-mangement-server-site.vercel.app/tasks')
             },
             
         ]

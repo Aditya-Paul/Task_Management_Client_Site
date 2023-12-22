@@ -11,11 +11,11 @@ const Ongingcardlist = ({items, dlt, uprefatch }) => {
             email: items.email,
         }
         console.log(taskinfo)
-        axios.post('http://localhost:3000/Complete', taskinfo)
+        axios.post('https://task-mangement-server-site.vercel.app/Complete', taskinfo)
             .then(res => {
                 console.log(res.data)
                 if (res.data.insertedId) {
-                    axios.delete(`http://localhost:3000/Ongoing/${id}`).then((res) => {
+                    axios.delete(`https://task-mangement-server-site.vercel.app/Ongoing/${id}`).then((res) => {
                         if (res.data.deletedCount > 0) {
                           Swal.fire({
                             position: 'top-end',

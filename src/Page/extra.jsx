@@ -14,8 +14,8 @@ const Todo_list = () => {
   const { data: tasks = [], refetch } = useQuery({
     queryKey: ['tasks'],
     queryFn: async () => {
-      const res = await axios.get(`http://localhost:3000/tasks`);
-      //const res = await axios.get(`http://localhost:3000//tasks/user/${user.email}`);
+      const res = await axios.get(`https://task-mangement-server-site.vercel.app/tasks`);
+      //const res = await axios.get(`https://task-mangement-server-site.vercel.app//tasks/user/${user.email}`);
       return res.data;
     },
   });
@@ -24,7 +24,7 @@ const Todo_list = () => {
   console.log(usertask)
 
   const handleDelete = (id) => {
-    axios.delete(`http://localhost:3000/tasks/${id}`).then((res) => {
+    axios.delete(`https://task-mangement-server-site.vercel.app/tasks/${id}`).then((res) => {
       if (res.data.deletedCount > 0) {
         Swal.fire({
           position: 'top-end',
